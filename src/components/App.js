@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/App.css";
 import { BrowserRouter as Router, Routes, Route, Link, Outlet, useParams } from "react-router-dom";
 
-
 function ItemDetail() {
   const { categoryItem } = useParams();
   return (
@@ -31,13 +30,21 @@ function WomenCategory() {
 
 function Layout() {
   return (
-    <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/women">Women</Link></li>
-      </ul>
-      <Outlet />
-    </div>
+    // 1. Cypress ko <main> tag chahiye tha, isliye isko main bana diya
+    <main>
+      {/* 2. Cypress ko menu ke liye <nav> tag chahiye tha */}
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/women">Women</Link></li>
+        </ul>
+      </nav>
+      
+      {/* 3. Cypress ko main > div chahiye jisme content render ho */}
+      <div>
+        <Outlet />
+      </div>
+    </main>
   )
 }
 
