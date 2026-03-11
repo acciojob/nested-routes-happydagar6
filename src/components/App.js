@@ -49,7 +49,11 @@ function Layout() {
 }
 
 function Home() {
-  return null;
+  return (
+    <div>
+      <p>Index</p>
+    </div>
+  )
 }
 
 function App() {
